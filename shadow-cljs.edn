@@ -1,0 +1,14 @@
+{:lein   true
+
+ :dependencies [[cider/cider-nrepl "0.22.4"]]
+
+ :prepl {:app 12345}
+
+ :builds {:app {:target          :browser
+                :output-dir      "resources/public/js/compiled"
+                :asset-path      "/js/compiled"
+                :modules         {:app {:init-fn hacker-typer.core/init
+                                        :preloads [devtools.preload]}}
+                :devtools        {:http-root    "resources/public"
+                                  :http-port    8280}}}}
+
